@@ -1,5 +1,17 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Process process = Runtime.getRuntime().exec("javac Medium/No2_Add_Two_Numbers/NL.java");
+        process = Runtime.getRuntime().exec("java Medium/No2_Add_Two_Numbers/NL.java");
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        int returnValue = process.waitFor();
+        System.out.println(String.format("Return: %d", returnValue));
     }
 }
