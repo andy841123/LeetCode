@@ -1,3 +1,5 @@
+package Medium.No5_Longest_Palindromic_Substring;
+
 public class LPS {
     public static void main(String[] args) {
         String s = "babad";
@@ -36,7 +38,7 @@ public class LPS {
     static byte sameInStr(String s){
         byte type = 0;
         for (char c : s.toCharArray()){
-            type = s.lastIndexOf(c) - s.indexOf(c)!=0 ? (byte)(s.lastIndexOf(c) - s.indexOf(c));
+            type = s.lastIndexOf(c) - s.indexOf(c)!=0 ? (byte)(s.lastIndexOf(c) - s.indexOf(c)) : (byte)0;
         }
         return type;
     }
