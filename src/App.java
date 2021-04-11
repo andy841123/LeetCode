@@ -14,7 +14,5 @@ public class App {
         }
         int returnValue = process.waitFor();
         System.out.println(String.format("Return: %d", returnValue));
-
-        JSONObject jobj = new JSONObject();
     }
 }
