@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class nonRepeat {
     public static void main(String[] args) {
-        // String s = "abcabcbb";
+        String s = "abcabcbb";
         //String s = "pwwkew";
         // String s = "aab";
-        System.out.println(len_nonRepeat_substring(args[0]));
+        System.out.println(len_nonRepeat_substring(s));
     }
 
 
