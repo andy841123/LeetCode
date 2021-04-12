@@ -24,7 +24,7 @@ public class dataWrite {
 
 
         try {
-            reader = new BufferedReader(new InputStreamReader(new FileInputStream("Qlist.txt"), "UTF-8")); // 指定讀取文件的編碼格式，以免出現中文亂碼
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream("src/Qlist.txt"), "UTF-8")); // 指定讀取文件的編碼格式，以免出現中文亂碼
             String str = null;
             while ((str = reader.readLine()) != null) {
                 data += str;
@@ -32,7 +32,7 @@ public class dataWrite {
             JSONObject jdoc = new JSONObject(data);
             jdoc.put(Integer.toString(num), file_path);
             
-            fw = new FileWriter("Qlist.txt");
+            fw = new FileWriter("src/Qlist.txt");
             fw.write(jdoc.toString());
             fw.flush();
             fw.close();
