@@ -2,44 +2,35 @@ package Medium.No5_Longest_Palindromic_Substring;
 
 public class LPS {
     public static void main(String[] args) {
-        String s = "babad";
+        String s = "";
         // System.out.println(s.substring(0,3));
         System.out.println(longPalindromicStr(s));
     }
 
     static String longPalindromicStr(String s){
+        String convert_buffer = "", origin_buffer, max_string="", buffer_string="";
+        char middle_char = ' ';
 
-        switch(s.length()){
-            case 0:
-                break;
+        for (int i = 0; i < s.length();i++){
+            middle_char = s.charAt(i);
+            origin_buffer = s.substring(i+1);
+            buffer_string = ""+middle_char;
+            for (int j = 0; j < convert_buffer.length() && j < origin_buffer.length(); j++){
+                if (convert_buffer.charAt(j) != origin_buffer.charAt(j)) break;
+                buffer_string = convert_buffer.charAt(j) + buffer_string + origin_buffer.charAt(j);
+            }
+            max_string  = max_string.length() < buffer_string.length() ? buffer_string : max_string;
+            convert_buffer = middle_char + convert_buffer;
+            
+            buffer_string = "";
 
-            case 1:
-                break;
+            for (int j = 0; j < convert_buffer.length() && j < origin_buffer.length(); j++){
+                if (convert_buffer.charAt(j) != origin_buffer.charAt(j)) break;
+                buffer_string = convert_buffer.charAt(j) + buffer_string + origin_buffer.charAt(j);
+            }
+            max_string  = max_string.length() < buffer_string.length() ? buffer_string : max_string;
 
-            case 2:
-                break;
-
-            default:
-                for (int i = 0; i < s.length()-2;i++){
-                    switch(sameInStr(s.substring(i, i+3))){
-                        case 1: //aab or baa
-                            break;
-                        case 2: //aba
-                            break;
-                        default:    //abc
-                            break;
-                    }
-                }
-                break;
         }
-        return "";
-    }
-
-    static byte sameInStr(String s){
-        byte type = 0;
-        for (char c : s.toCharArray()){
-            type = s.lastIndexOf(c) - s.indexOf(c)!=0 ? (byte)(s.lastIndexOf(c) - s.indexOf(c)) : (byte)0;
-        }
-        return type;
+        return max_string;
     }
 }
