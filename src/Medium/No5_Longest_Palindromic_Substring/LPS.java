@@ -2,7 +2,7 @@ package Medium.No5_Longest_Palindromic_Substring;
 
 public class LPS {
     public static void main(String[] args) {
-        String s = "";
+        String s = "dakjshdkajsabcdefggfedcbaslakdjslakjdlsdjslkajlskdjalsk";
         // System.out.println(s.substring(0,3));
         System.out.println(longPalindromicStr(s));
     }
