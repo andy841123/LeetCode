@@ -16,7 +16,7 @@ public class App {
         String num;
 
         try {
-            reader = new BufferedReader(new InputStreamReader(new FileInputStream("src/Qlist.txt"), "UTF-8")); // 指定讀取文件的編碼格式，以免出現中文亂碼
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream("src/Qlist.txt"), "UTF-8"));
             String str = null;
             while ((str = reader.readLine()) != null) {
                 data += str;
