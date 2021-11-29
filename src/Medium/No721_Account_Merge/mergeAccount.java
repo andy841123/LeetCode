@@ -19,11 +19,11 @@ public class mergeAccount {
     }
 
     public static List<List<String>> accountsMerge(List<List<String>> accounts) {
-        ArrayList<String> root = new ArrayList<String>();
+        int [] root = new int [4];
 
-        for (List<String> acc: accounts){
-            ListIterator<String> accIt = acc.listIterator(1);
-
+        for (int member = 0; member < accounts.size(); member++){
+            ListIterator<String> accIt = accounts.get(member).listIterator(1);
+            root[member] = member;
             while(accIt.hasNext()){
                 System.out.println(accIt.next());
             }
