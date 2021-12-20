@@ -10,13 +10,15 @@ public class RadixSorting {
         for(int i = 0; i < r_list.length;i++){
             r_list[i] = (int)(Math.random()*100 + 1);
         }
+        long startTime = System.currentTimeMillis();
         System.out.println(Arrays.toString(radix(r_list)));
+        long stopTime = System.currentTimeMillis();
+        System.out.println("Times: " + (stopTime - startTime) + " ms");
     }
 
     public static int[] radix(int[] r_list){
         int maxNum = maxNum(r_list);
         int d = digits(maxNum);
-        System.out.println(maxNum + ", " + d);
 
         Integer[] I_r_list = Arrays.stream( r_list ).boxed().toArray( Integer[]::new );
         List<Integer> newList = new ArrayList<Integer>();
