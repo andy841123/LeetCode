@@ -40,7 +40,7 @@ public class RadixSorting {
                 queueList.add(new ArrayList<Integer>());
             }
         }
-        return newList.stream().mapToInt(i->i).toArray(); // 
+        return newList.stream().mapToInt(i->i).toArray();
     }
 
     public static int maxNum(int[] list){
